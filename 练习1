@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-print(n=123)
-print(f=456.789)
+n=123
+print(n)
+f=456.789
+print(f)
 s1="Hello ,world"
 print(s1)
 s2="Hello,\'Adma\'"
