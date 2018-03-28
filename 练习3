@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+def trim(s):
+    n=len(s)
+    flag = False
+    for i in range(n):
+        if s[i] == " ":
+            str = s[i + 1:n]
+            flag = True
+        else:
+            break
+    if not flag:
+        for j in range(n):
+            if s[n - j - 1] == " ":
+                str = s[0:n - j - 1]
+            else:
+                break
+    else:
+        s = str
+        n = len(s)
+        for j in range(n):
+            if s[n - j - 1] == " ":
+                str = s[0:n - j - 1]
+            else:
+                break
+    if s == '':
+        return ''
+    return str
+if trim('hello  ') != 'hello':
+    print('测试失败1!')
+elif trim('  hello') != 'hello':
+    print('测试失败2!')
+elif trim('  hello  ') != 'hello':
+    print('测试失败3!')
+elif trim('  hello  world  ') != 'hello  world':
+    print('测试失败4!')
+elif trim('') != '':
+    print('测试失败5!')
+elif trim('    ') != '':
+    print('测试失败6!')
+else:
+    print('测试成功!')
